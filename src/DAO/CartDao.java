@@ -4,10 +4,9 @@ import java.sql.SQLException;
 
 import DTO.Color;
 
-
 public interface CartDao {
 	
-public boolean addToCart(Color color,int iduser) throws SQLException;
+public boolean addToCart(int userId, int productId) throws SQLException;
 
 public boolean removeFromCart(int cartid) throws SQLException;
 

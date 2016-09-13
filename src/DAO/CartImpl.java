@@ -5,32 +5,29 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Date;
 
+import DTO.Cart;
 import DTO.Color;
-
-
 
 public class CartImpl implements CartDao {
 	Connection connection = ConnManager.getInstance().getConnection();
+	Cart cart = new Cart();
 
 	@Override
-	public boolean addToCart(Color color, int iduser) throws SQLException {
-	Date date = new Date();
-		String query = "insert into color_shop.cart (iduser, idcolor, date) values (?,?,?)";
+	public boolean addToCart(int userId,  int productId) throws SQLException {
+
+		String query = "insert into color_shop.cart (iduser, idcolor) values (?,?)";
 
 		PreparedStatement statement = connection.prepareStatement(query);
-			statement.setInt(1,iduser );
-			statement.setInt(2, color.getIdColors());
-			statement.setDate(3, (java.sql.Date) date );
+		statement.setInt(1, userId);
+		statement.setInt(2, productId);
 
-			statement.executeUpdate();
+		statement.executeUpdate();
 
-		
-		
 		return true;
 	}
 
 	@Override
-	public boolean removeFromCart( int idcart) throws SQLException {
+	public boolean removeFromCart(int idcart) throws SQLException {
 		String query = "DELETE FROM color_shop cart  WHERE idcolor = ?";
 
 		PreparedStatement statement = connection.prepareStatement(query);
@@ -55,5 +52,4 @@ public class CartImpl implements CartDao {
 		return true;
 	}
 
-	
 }

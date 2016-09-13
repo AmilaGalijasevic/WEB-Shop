@@ -18,7 +18,7 @@
 
 	<div class="wrapper">
 	<div class="container">
-			<h2 style = "color: white;">Found colors: </h2>
+			<h2 style = "color: white;">List of products: </h2>
 			<br>
 
 			<table class="table table-hover" style = "color: white;">
@@ -28,6 +28,7 @@
 						<th>Type</th>
 						<th>Name</th>
 						<th>Color</th>
+						<th>Add to cart</th>
 						
 
 					</tr>

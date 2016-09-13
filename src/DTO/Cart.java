@@ -1,66 +1,30 @@
 package DTO;
 
-import java.util.Date;
+import java.util.HashMap;
 
 public class Cart {
-	private int idCart;
-	private int idUser;
-	private int idColor;
-	private Date date;
-	
-	
-	public Cart(int idCart, int idUser, int idColor, Date date) {
-		super();
-		this.idCart = idCart;
-		this.idUser = idUser;
-		this.idColor = idColor;
-		this.date = date;
-	}
-
+	HashMap<Color, Integer> cart;
 
 	public Cart() {
-		super();
+		cart = new HashMap<>();
 	}
 
-
-	public int getIdCart() {
-		return idCart;
+	public HashMap<Color, Integer> getCart() {
+		return cart;
 	}
 
-
-	public void setIdCart(int idCart) {
-		this.idCart = idCart;
+	public void setCart(HashMap<Color, Integer> cart) {
+		this.cart = cart;
 	}
 
-
-	public int getIdUser() {
-		return idUser;
+	public void addToCart(Color color, int productId) {
+		cart.put(color, productId);
 	}
 
-
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
-	}
-
-
-	public int getIdColor() {
-		return idColor;
-	}
-
-
-	public void setIdColor(int idColor) {
-		this.idColor = idColor;
-	}
-
-
-	public Date getDate() {
-		return date;
-	}
-
-
-	public void setDate(Date date) {
-		this.date = date;
+	@Override
+	public String toString() {
+		return "Cart [cart=" + cart + "]";
 	}
 	
-	
+
 }

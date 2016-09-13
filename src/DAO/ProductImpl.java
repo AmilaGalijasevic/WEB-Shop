@@ -206,11 +206,8 @@ public class ProductImpl implements ProductDao {
 				color.setType(rs.getString("type"));
 				color.setName(rs.getString("name"));
 				color.setColor(rs.getString("color"));
-
-				
-			}
-
 		
+			}
 
 		return color;
 		

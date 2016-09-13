@@ -43,7 +43,7 @@ public class ProcuctsServlet extends HttpServlet {
 		ArrayList<Color> list = product.listColors();
 
 		
-		request.setAttribute("list", list);
+		request.getSession().setAttribute("list", list);
 		request.getSession().setAttribute("user", user);
 		request.getRequestDispatcher("List.jsp").forward(request, response);
 	}

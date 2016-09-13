@@ -52,4 +52,10 @@ public class Color {
 		this.color = color;
 	}
 
+	@Override
+	public String toString() {
+		return "Color [idColors=" + idColors + ", type=" + type + ", name=" + name + ", color=" + color + "]";
+	}
+	
+
 }

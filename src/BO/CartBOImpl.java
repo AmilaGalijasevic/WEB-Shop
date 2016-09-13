@@ -3,19 +3,21 @@ package BO;
 import java.sql.SQLException;
 
 import DAO.CartImpl;
-import DTO.Color;
 
 public class CartBOImpl implements CartBO {
 	CartImpl cart = new CartImpl();
 
 	@Override
-	public boolean addToCart(Color color, int iduser)  {
-		if (color != null && iduser != 0) {
+	public boolean addToCart(int userId, int productId)   {
+		
+		if ( productId > 0) {
 			try {
-			cart.addToCart(color, iduser);
+				cart.addToCart(userId, productId);
+				System.out.println(cart.addToCart(userId, productId));
+			
 			return true;
-			} catch (Exception e) {
-				// TODO: handle exception
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
 		}
 		return false;
@@ -28,7 +30,7 @@ public class CartBOImpl implements CartBO {
 			cart.removeFromCart(cartid);
 			return true;
 			} catch (Exception e) {
-				
+				e.printStackTrace();
 			}
 		}
 		return false;

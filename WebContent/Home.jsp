@@ -34,7 +34,7 @@
 
 
 		<ul>
-			<li><a href="#"><span
+			<li><a href="Cart.jsp"><span
 					class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 			<li><a href="LogOut.jsp"><span
 					class="glyphicon glyphicon-off"></span> Log Out</a></li>

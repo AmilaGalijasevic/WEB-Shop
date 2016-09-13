@@ -14,7 +14,7 @@
     <form class="form-signin">       
       <h2 class="form-signin-heading">Are you sure you want to Log Out?</h2>
      
-      <a href="index.jsp" class="btn btn-lg btn-default btn-block" role="button">Yes</a>
+      <a href="LogOut" class="btn btn-lg btn-default btn-block" role="button">Yes</a>
 	  
       <a href="Home.jsp" class="btn btn-lg btn-primary btn-block" role="button">Cancel</a>
     </form>
